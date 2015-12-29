@@ -11,22 +11,22 @@
 # packages_repos::repos:
 #     'Debian':
 #          example_repo:
-#            location: 'http://example.adaptavist.com/'
+#            location: 'http://apt.example.com/'
 #            repos: '/'
-#            key: 'key'
+#            key: '899A9999A5F538E6808F756DC8B73650E8C84716'
 #            include_src: false
 #            release: ''
 #            key_content: "-----BEGIN PGP PUBLIC KEY BLOCK-----\n"
 #          another_example_repo:
-#            location: 'http://another_example.adaptavist.com/'
+#            location: 'http://another_repo.example.com/'
 #            repos: '/'
-#            key: 'key'
+#            key: '899A9999A5F538E6808F756DC8B73650E8C84716'
 #            include_src: false
 #            release: ''
 #            key_content: "-----BEGIN PGP PUBLIC KEY BLOCK-----\n"
 #     'RedHat':
 #          example_repo:
-#            baseurl => "http://example_yum.adaptavist.com",
+#            baseurl => "http://yum.example.com",
 #            descr => "IUS Community repository",
 #            enabled => 1,
 #            gpgcheck => 0
@@ -40,15 +40,15 @@
 #     packages_repos::repos:
 #       'RedHat':
 #         example_repo:
-#           baseurl => "http://example_yum.adaptavist.com",
+#           baseurl => "http://yum.example.com",
 #           descr => "IUS Community repository",
 #           enabled => 1,
 #           gpgcheck => 0
 #       'Debian':
 #         example_repo:
-#           location => "http://example_yum.adaptavist.com",
+#           location => "http://apt.example.com",
 #           repos => '/',
-#           key: 'key'
+#           key: '899A9999A5F538E6808F756DC8B73650E8C84716'
 #           include_src: false
 #           release: ''
 

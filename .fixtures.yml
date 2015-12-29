@@ -6,6 +6,7 @@ fixtures:
       repo: "https://github.com/Adaptavist/puppet-puppi"
     apt:
       repo: "https://github.com/Adaptavist/puppet-apt"
+      ref: '1.8.0'
     yum:
       repo: "https://github.com/Adaptavist/puppet-yum"
   symlinks:
