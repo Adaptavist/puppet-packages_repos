@@ -65,9 +65,9 @@ class packages_repos(
         $os_repos={}
     }
 
-    if ($host != undef) {
+    if ($::host != undef) {
         #if so validate the hash
-        validate_hash($host)
+        validate_hash($::host)
         #if a host level "merge_repos" flag has been set use it, otherwise use the global flag
         $real_merge_repos = $host['packages_repos::merge_repos']? {
             default => $host['packages_repos::merge_repos'],
@@ -107,12 +107,15 @@ class packages_repos(
             Debian: {
                 if !defined(Class['apt']){
                     class { 'apt':
-                        always_apt_update => false,
+                        always_apt_update    => false,
                         purge_sources_list_d => true,
                     }
                 }
                 Apt::Source<| |> -> Package<| |>
                 create_resources(apt::source, $real_repos)
+            }
+            default: {
+                fail("packages_repos - Unsupported Operating System family: ${::osfamily}")
             }
         }
     }

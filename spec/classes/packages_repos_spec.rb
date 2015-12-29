@@ -48,27 +48,11 @@ describe 'packages_repos', :type => 'class' do
     end
   end
 
-  context "Should not include yum, on unsupported os" do
-    let(:facts){{:osfamily => 'Windows' }}
-    let(:params){{'repos' => {
-        'RedHat' => {
-          'adaptavist_repo' => {
-            'baseurl' => "http://example_yum.example.com",
-            'descr' => "IUS Community repository",
-            'enabled' => 1,
-            'gpgcheck' => 0,
-          }
-        }
-      }
-    }}
+  context "Should fail with unsupported OS family" do
+    let(:facts){{:osfamily => 'Solaris' }}
+
     it do
-      should_not contain_class('yum')
-      should_not contain_yumrepo('adaptavist_repo').with(
-        'baseurl' => "http://example_yum.example.com",
-        'descr' => "IUS Community repository",
-        'enabled' => '1',
-        'gpgcheck' => '0',
-      )
+      should raise_error(Puppet::Error, /packages_repos - Unsupported Operating System family: Solaris/)
     end
   end
 
