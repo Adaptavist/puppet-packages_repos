@@ -1,6 +1,7 @@
-#Packages_repos puppet module
+# Packages_repos puppet module
+[![Build Status](https://travis-ci.org/Adaptavist/puppet-packages_repos.svg?branch=master)](https://travis-ci.org/Adaptavist/puppet-packages_repos)
 
-####Table of Contents
+#### Table of Contents
 
 1. [Overview - What is the packages_repos module?](#overview)
 1. [Module Description - What does the module do?](#module-description)
@@ -22,11 +23,11 @@
     * [Contributing to the module](#contributing)
     * [Running tests - A quick guide](#running-tests)
 
-##Overview
+## Overview
 
 The **packages_repo** module includes and sets up apt or yum repositories based on os, accepsts host specific repo settings.
 
-##Module Description
+## Module Description
 
 Makes sure required repositories are registered and they are available before any package is installed.
 
@@ -35,24 +36,24 @@ Default repos are set in params.pp. Custom repos definition is available on per 
 
 For RedHat defaults are rpmforge, rpmforge-testing, rpmforge-extras
 
-##Module Dependencies
+## Module Dependencies
 
 This module depends on: 
 * puppetlabs/apt
 * example42/yum
 
-##Usage
+## Usage
 
-###Classes and defined types
+### Classes and defined types
 
-####Class: packages_repos
+#### Class: packages_repos
 
 Main class that accepts OS specific repos hash as parameter and creates file resources.
 
 * packages_repos::repos - hash of repos to include, on global level or per host, see examples for required fields
 * packages_repos::merge_repos - identifies per host if default packages should be merged with custom ones
 
-###Examples
+### Examples
 
 Global level setup:
 
@@ -96,31 +97,31 @@ hosts:
           gpgcheck => 0
 ```
 
-##Reference
+## Reference
 
-###Classes
+### Classes
 
-####Public classes
+#### Public classes
 
 * packages_repos - registers OS specific repos and makes sure they are available before any package is installed.
 
-####Private classes
+#### Private classes
 
-###Defined types
+### Defined types
 
-####Public defined types
+#### Public defined types
 
-####Private defined types
+#### Private defined types
 
-###Templates
+### Templates
 
-##Limitations
+## Limitations
 
 * Module currently supports Debian and RedHat
 
-##Development
+## Development
 
-###Contributing
+### Contributing
 
 * Create branch, name it according to functionality you are developing. Prefix with feature or bug, so the branch name looks like feature/<name_of_feature>
 
@@ -130,7 +131,7 @@ hosts:
 
 * Once approved, merge with master
 
-###Running tests
+### Running tests
 
 Tests are located in spec folder. Subfolders classes and defines separates types of objects tested. Make sure .fixtures.yml contains all dependent modules to run tests. Functionality in all classes and defines has to be tested for all supported OS and cases of use. 
 
