@@ -1,5 +1,5 @@
 name 'adaptavist/packages_repos'
-version '0.1.6'
+version '0.1.7'
 source 'https://github.com/Adaptavist/puppet-packages_repos.git'
 author 'adaptavist'
 summary 'packages_repos Module' 
