@@ -1,7 +1,8 @@
+# Params class for packages_repos, setting the default values
 class packages_repos::params {
 
   case $::osfamily {
-      RedHat: {
+      'RedHat': {
           $repos = {
             'RedHat' => {
               'rpmforge' => {
@@ -27,7 +28,7 @@ class packages_repos::params {
             }
           }
       }
-      Debian: {
+      'Debian': {
         $repos = { 'Debian' => {} }
       }
       default: {
